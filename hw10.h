@@ -1,5 +1,5 @@
-#ifndef HW9_H
-#define HW9_H
+#ifndef HW10_H
+#define HW10_H
 
 /* Constant definitions */
 
@@ -40,11 +40,12 @@ typedef struct commit {
 
 /* Function prototypes */
 
-commit_t *create_commit(char *, char *, time_struct_t);
-void delete_commit(commit_t *);
-int add_commit(commit_t *, commit_t *);
-commit_t *remove_commit(commit_t *);
-void delete_git_log(commit_t *);
-int find_commit(commit_t *, char *, time_struct_t);
+void create_commit(char *, char *, time_struct_t, commit_t **);
+void delete_commit(commit_t **);
+int add_commit(commit_t **, commit_t *);
+int delete_git_log(commit_t **);
+int find_commit(commit_t **, char *);
+int find_latest_commits(commit_t *, time_struct_t, commit_t **);
+int delete_list(commit_t **);
 
-#endif // HW9_H
+#endif // HW10_H
